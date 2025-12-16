@@ -1,0 +1,37 @@
+- name: cursor-lock
+  category: device
+  modality: ["haptics","eye-tracking"]
+  intent: "Stabilize cursor for precise selection"
+  parameters:
+    - name: durationMs
+      type: int
+      required: false
+  auth:
+    tier: "public-live"
+    permissions: ["device.read"]
+  audit:
+    redact: false
+  safety:
+    dryRun: true
+    confirm: false
+
+- name: dictate-with-spellcheck
+  category: docs
+  modality: ["voice","assistive"]
+  intent: "Dictate text with emoji and spell check"
+  parameters:
+    - name: targetFile
+      type: string
+      required: true
+    - name: emojiLevel
+      type: enum
+      required: false
+      allowed: ["none","minimal","expressive"]
+  auth:
+    tier: "trusted"
+    permissions: ["files.write"]
+  audit:
+    redact: true
+  safety:
+    dryRun: true
+    confirm: true
