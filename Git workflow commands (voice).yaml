@@ -1,0 +1,50 @@
+- name: create-branch
+  category: git
+  modality: ["voice"]
+  intent: "Create a new branch"
+  parameters:
+    - name: branchName
+      type: string
+      required: true
+  auth:
+    tier: "trusted"
+    permissions: ["repo.write"]
+  audit:
+    redact: false
+  safety:
+    dryRun: true
+    confirm: true
+
+- name: commit-all
+  category: git
+  modality: ["voice"]
+  intent: "Stage all and commit"
+  parameters:
+    - name: message
+      type: string
+      required: true
+  auth:
+    tier: "trusted"
+    permissions: ["repo.write"]
+  audit:
+    redact: true
+  safety:
+    dryRun: false
+    confirm: true
+
+- name: push-origin
+  category: git
+  modality: ["voice"]
+  intent: "Push to remote"
+  parameters:
+    - name: branch
+      type: string
+      required: true
+  auth:
+    tier: "trusted"
+    permissions: ["repo.write","repo.push"]
+  audit:
+    redact: false
+  safety:
+    dryRun: true
+    confirm: true
