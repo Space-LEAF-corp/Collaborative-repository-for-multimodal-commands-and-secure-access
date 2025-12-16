@@ -1,0 +1,20 @@
+# specs/command-schema.yaml
+version: 1.0
+command:
+  name: string            # e.g., "create-branch"
+  category: enum          # ["git","project","docs","device","debug","system"]
+  modality: array         # ["voice","haptics","eye-tracking","assistive"]
+  intent: string          # short description
+  parameters:             # typed args
+    - name: string
+      type: enum          # ["string","int","bool","enum"]
+      required: bool
+      allowed: [string]   # optional enum set
+  auth:
+    tier: enum            # ["public-live","trusted","qr-dna-only"]
+    permissions: [string] # e.g., ["repo.write","device.control"]
+  audit:
+    redact: bool          # hide sensitive params in logs
+  safety:
+    dryRun: bool          # enable verification before execution
+    confirm: bool         # require user confirmation
