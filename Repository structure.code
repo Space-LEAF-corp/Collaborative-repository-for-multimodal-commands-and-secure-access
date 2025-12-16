@@ -1,0 +1,48 @@
+voice-commands-platform/
+├─ README.md
+├─ LICENSE
+├─ docs/
+│  ├─ overview.md
+│  ├─ security-model.md
+│  └─ governance.md
+├─ specs/
+│  ├─ command-schema.yaml
+│  ├─ auth-policy.yaml
+│  └─ device-integration.md
+├─ platform/
+│  ├─ core/
+│  │  ├─ command-router/
+│  │  ├─ permissions/
+│  │  └─ audit-logger/
+│  ├─ adapters/
+│  │  ├─ voice/
+│  │  ├─ haptics/
+│  │  ├─ eye-tracking/
+│  │  └─ assistive-devices/
+│  └─ security/
+│     ├─ identity/
+│     ├─ qr-dna/
+│     └─ diamond-firewall/
+├─ access-tiers/
+│  ├─ public-live/
+│  │  ├─ commands/
+│  │  └─ examples/
+│  ├─ trusted/
+│  │  ├─ commands/
+│  │  └─ tests/
+│  └─ qr-dna-only/
+│     ├─ policy/
+│     └─ commands/
+├─ examples/
+│  ├─ github-workflow/
+│  ├─ device-calibration/
+│  └─ secure-sessions/
+├─ tests/
+│  ├─ unit/
+│  └─ integration/
+├─ .github/
+│  ├─ ISSUE_TEMPLATE.md
+│  ├─ PULL_REQUEST_TEMPLATE.md
+│  └─ workflows/
+│     ├─ ci.yml
+│     └─ security-scan.yml
